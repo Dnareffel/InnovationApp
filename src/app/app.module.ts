@@ -3,16 +3,44 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { IndexComponent } from './pages/index/index.component'
+import { CreateComponent } from './pages/create/create.component';
+import { EditComponent } from './pages/edit/edit.component';
+
+import { RouterModule } from '@angular/router';
+import { appRoutes }  from './routerConfig.';
+
+import { HttpClientModule } from '@angular/common/http';
+
+import { CoinService } from './services/coin/coin.service';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { MaterializeModule } from 'angular2-materialize';
+import { FooterComponent } from './footer/footer.component';
+import { NavbarComponent } from './navbar/navbar.component';
+
+
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    IndexComponent,
+    CreateComponent,
+    EditComponent,
+    FooterComponent,
+    NavbarComponent
   ],
+
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule,
+    ReactiveFormsModule,
+    MaterializeModule
   ],
-  providers: [],
+  providers: [CoinService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
