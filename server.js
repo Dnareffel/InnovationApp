@@ -14,8 +14,6 @@ err => { console.log('Can not connect to the database'+ err)}
 
 const app = express();
 
-
-
 app.use(bodyParser.json());
 app.use(cors());
 const port = process.env.PORT || 4000;
