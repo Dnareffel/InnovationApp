@@ -16,11 +16,11 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
-
+const port = process.env.PORT || 4000;
 
 app.use('/coins', coinRoutes);
 
-const server = app.listen(process.env.PORT || 4000 , function(){
+const server = app.listen(port, function(){
 console.log('Listening on port ' + port);
 });
 
