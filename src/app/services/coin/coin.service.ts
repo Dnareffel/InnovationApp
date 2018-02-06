@@ -11,7 +11,7 @@ export class CoinService {
   constructor(private http: HttpClient) {}
 
   addCoin(name, price) {
-    const uri = 'http://localhost:4000/coins/add';
+    const uri = 'https://localhost:4000/coins/add';
     const obj = {
       name: name,
       price: price
@@ -24,7 +24,7 @@ export class CoinService {
   }
 
   getCoins() {
-    const uri = 'http://localhost:4000/coins';
+    const uri = 'https://localhost:4000/coins';
     return this
             .http
             .get(uri)
@@ -34,7 +34,7 @@ export class CoinService {
   }
 
   editCoin(id) {
-    const uri = 'http://localhost:4000/coins/edit/' + id;
+    const uri = 'https://localhost:4000/coins/edit/' + id;
     return this
             .http
             .get(uri)
@@ -44,7 +44,7 @@ export class CoinService {
   }
 
   updateCoin(name, price, id) {
-    const uri = 'http://localhost:4000/coins/update/' + id;
+    const uri = 'https://localhost:4000/coins/update/' + id;
 
     const obj = {
       name: name,
@@ -57,7 +57,7 @@ export class CoinService {
   }
 
   deleteCoin(id) {
-    const uri = 'http://localhost:4000/coins/delete/' + id;
+    const uri = 'https://localhost:4000/coins/delete/' + id;
 
         return this
             .http
