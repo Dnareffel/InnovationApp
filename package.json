@@ -35,7 +35,8 @@
     "mongoose": "^5.0.3",
     "nodemon": "^1.14.12",
     "rxjs": "^5.5.2",
-    "zone.js": "^0.8.19"
+    "zone.js": "^0.8.19",
+    "typescript": "~2.5.3"
   },
   "engines": {
     "node":"8.9.4",
