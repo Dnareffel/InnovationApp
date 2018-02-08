@@ -23,7 +23,8 @@ export class CreateComponent implements OnInit {
   createForm() {
     this.angForm = this.fb.group({
       name: ['', Validators.required ],
-      price: ['', Validators.required ]
+      price: ['', Validators.required ],
+    
    });
   }
   

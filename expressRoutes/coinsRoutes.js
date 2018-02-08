@@ -45,6 +45,7 @@ coinRoutes.route('/update/:id').post(function (req, res) {
     else {
       coin.name = req.body.name;
       coin.price = req.body.price;
+    
 
       coin.save().then(coin => {
           res.json('Update complete');

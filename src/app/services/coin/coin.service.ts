@@ -11,10 +11,11 @@ export class CoinService {
   constructor(private http: HttpClient) {}
 
   addCoin(name, price) {
-    const uri = 'https://peaceful-retreat-26329.herokuapp.com/coins/add';
+    const uri = '//localhost:4000/coins/add';
     const obj = {
       name: name,
-      price: price
+      price: price,
+     
     };
     this
       .http
@@ -24,7 +25,7 @@ export class CoinService {
   }
 
   getCoins() {
-    const uri = 'https://peaceful-retreat-26329.herokuapp.com/coins';
+    const uri = '//localhost:4000/coins';
     return this
             .http
             .get(uri)
@@ -34,7 +35,7 @@ export class CoinService {
   }
 
   editCoin(id) {
-    const uri = 'https://peaceful-retreat-26329.herokuapp.com/coins/edit/' + id;
+    const uri = '//localhost:4000/coins/edit/' + id;
     return this
             .http
             .get(uri)
@@ -44,11 +45,12 @@ export class CoinService {
   }
 
   updateCoin(name, price, id) {
-    const uri = 'https://peaceful-retreat-26329.herokuapp.com/coins/update/' + id;
+    const uri = '//localhost:4000/coins/update/' + id;
 
     const obj = {
       name: name,
-      price: price
+      price: price,
+      
     };
     this
       .http
@@ -57,7 +59,7 @@ export class CoinService {
   }
 
   deleteCoin(id) {
-    const uri = 'https://peaceful-retreat-26329.herokuapp.com/coins/delete/' + id;
+    const uri = '//localhost:4000/coins/delete/' + id;
 
         return this
             .http

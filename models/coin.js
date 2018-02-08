@@ -8,6 +8,9 @@ var Coin = new Schema({
   },
   price: {
     type: Number
+  },
+  description: {
+    type: String
   }
 },{
     collection: 'coins'

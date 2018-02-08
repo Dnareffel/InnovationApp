@@ -20,14 +20,15 @@ export class EditComponent implements OnInit {
   createForm() {
     this.angForm = this.fb.group({
       name: ['', Validators.required ],
-      price: ['', Validators.required ]
+      price: ['', Validators.required ],
+   
    });
   }
 
   updateCoin(name, price) {
     this.route.params.subscribe(params => {
     this.service.updateCoin(name, price, params['id']);
-    this.router.navigate(['index']);
+    
   });
 }
 
