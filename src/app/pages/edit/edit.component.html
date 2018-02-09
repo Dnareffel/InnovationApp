@@ -5,12 +5,12 @@
   <div >
     <form [formGroup]="angForm" novalidate>
       <div >
-        <label class="col-md-4">Coin Name</label>
+        <label class="col-md-4">Nom de l'article</label>
         <input type="text"  formControlName="name" #name [(ngModel)] = "coin.name"/>
       </div>
    
       <div >
-        <label class="col-md-4">Coin Price</label>
+        <label class="col-md-4">Prix</label>
         <input type="text"  formControlName="price" #price [(ngModel)] = "coin.price" />
       </div>
 
