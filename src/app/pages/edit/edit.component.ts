@@ -14,7 +14,7 @@ export class EditComponent implements OnInit {
 
   coin: any;
   angForm: FormGroup;
-  title = 'Edit Coin';
+  title = 'Editer';
   constructor(private route: ActivatedRoute, private router: Router, private service: CoinService, private fb: FormBuilder) {
     this.createForm();
    }

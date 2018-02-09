@@ -11,7 +11,7 @@ import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 export class CreateComponent implements OnInit {
 
   
-  title = 'Add Coin';
+  title = 'Ajouter';
 
 
   angForm: FormGroup;
