@@ -6,20 +6,34 @@
     <form [formGroup]="angForm" novalidate>
       <div >
         <label class="col-md-4">Nom de l'article</label>
-        <input type="text"  formControlName="name" #name [(ngModel)] = "coin.name"/>
+        <input type="text"  formControlName="name" #name [(ngModel)] = "innov.name"/>
       </div>
    
       <div >
-        <label class="col-md-4">Prix</label>
-        <input type="text"  formControlName="price" #price [(ngModel)] = "coin.price" />
+        <label class="col-md-4">Auteur</label>
+        <input type="text"  formControlName="author" #author [(ngModel)] = "innov.author" />
       </div>
 
+      <div >
+        <label class="col-md-4">Image URL</label>
+        <input type="text"  formControlName="imageURL" #imageURL [(ngModel)] = "innov.imageURL" />
+      </div>
+
+      <div >
+        <label class="col-md-4">description</label>
+        <input type="text"  formControlName="description" #description [(ngModel)] = "innov.description" />
+      </div>
+
+      <div >
+        <label class="col-md-4">Contact</label>
+        <input type="text"  formControlName="contact" #contact [(ngModel)] = "innov.contact" />
+      </div>
       
     
 
         <div >
             
-          <button class="waves-effect waves-light btn" (click)="updateCoin(name.value, price.value)"  >Update</button>
+          <button class="waves-effect waves-light btn" (click)="updateCoin(name.value, author.value, imageURL.value, description.value,conatact.value)"  >Update</button>
 
         </div>
 

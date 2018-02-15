@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CoinService } from '../../services/coin/coin.service'
+import { InnovService } from '../../services/innovations/innov.service'
 import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 
 
@@ -15,33 +15,35 @@ export class EditComponent implements OnInit {
   coin: any;
   angForm: FormGroup;
   title = 'Editer';
-  constructor(private route: ActivatedRoute, private router: Router, private service: CoinService, private fb: FormBuilder) {
+  constructor(private route: ActivatedRoute, private router: Router, private service: InnovService, private fb: FormBuilder) {
     this.createForm();
    }
 
   createForm() {
     this.angForm = this.fb.group({
       name: ['', Validators.required ],
-      price: ['', Validators.required ],
-   
+      author: ['', Validators.required ],
+      description: ['', Validators.required ],
+      imageURL: ['', Validators.required ],
+      contact: ['', Validators.required ],
    });
   }
 
-  updateCoin(name, price) {
+  updateCoin(name,author,description,imageURL,contact) {
     this.route.params.subscribe(params => {
-    this.service.updateCoin(name, price, params['id']);
+    this.service.updateInnov(name, author,description,imageURL,contact, params['id']);
     
   });
 }
 
 deleteCoin(id) {
-  this.service.deleteCoin(id).subscribe(res => {
+  this.service.deleteInnov(id).subscribe(res => {
     console.log('Deleted');
   });
 }
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.coin = this.service.editCoin(params['id']).subscribe(res => {
+      this.coin = this.service.editInnov(params['id']).subscribe(res => {
         this.coin = res;
       });
     });

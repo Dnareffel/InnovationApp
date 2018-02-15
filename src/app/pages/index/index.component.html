@@ -2,22 +2,25 @@
 
 <div class="row">
 
-      <div class="col s4" *ngFor="let coin of coins">
+      <div class="col s4" *ngFor="let innov of innovs">
 
           <div class="card">
 
               <div class="card-image">
 
-                <img src="../../../assets/INNOVATION.png">
+                <img src="{{imageURL}}">
                 <span class="card-title">{{ coin.name }}</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light red " [routerLink]="['/edit', coin._id]"><i class="material-icons">brush</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light red " [routerLink]="['/edit', innov._id]"><i class="material-icons">brush</i></a>
                 
                 
               </div>
               <div class="card-content">
                  
-                  <p>Prix : {{ coin.price }} €</p>
-                  <button  (click)="deleteCoin(coin._id)" ><i class="material-icons">delete</i></button>
+                  <p>Prix : {{ innov.author }} €</p>
+                  <p>Prix : {{ innov.description }} €</p>
+                  <p>Prix : {{ innov.contact }} €</p>
+                 
+                  <button  (click)="deleteInnov(innov._id)" ><i class="material-icons">delete</i></button>
                   
               </div>
             </div>

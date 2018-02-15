@@ -12,7 +12,7 @@ import { appRoutes }  from './routerConfig.';
 
 import { HttpClientModule } from '@angular/common/http';
 
-import { CoinService } from './services/coin/coin.service';
+import { InnovService } from './services/innovations/innov.service';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -42,7 +42,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     ReactiveFormsModule,
     MaterializeModule
   ],
-  providers: [CoinService],
+  providers: [InnovService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

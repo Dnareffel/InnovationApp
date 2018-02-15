@@ -5,16 +5,20 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class CoinService {
+export class InnovService {
 
   result: any;
   constructor(private http: HttpClient) {}
 
-  addCoin(name, price) {
-    const uri = 'https://peaceful-retreat-26329.herokuapp.com/coins/add';
+  addInnov(name, author, imageURL, description, contact) {
+    const uri = 'https://peaceful-retreat-26329.herokuapp.com/innov/add';
     const obj = {
       name: name,
-      price: price,
+      author:author,
+      imageURL: imageURL,
+      description : description,
+      contact :contact,
+    
      
     };
     this
@@ -24,8 +28,8 @@ export class CoinService {
           console.log('Done'));
   }
 
-  getCoins() {
-    const uri = 'https://peaceful-retreat-26329.herokuapp.com/coins';
+  getInnov() {
+    const uri = 'https://peaceful-retreat-26329.herokuapp.com/innov';
     return this
             .http
             .get(uri)
@@ -34,8 +38,8 @@ export class CoinService {
             });
   }
 
-  editCoin(id) {
-    const uri = 'https://peaceful-retreat-26329.herokuapp.com/coins/edit/' + id;
+  editInnov(id) {
+    const uri = 'https://peaceful-retreat-26329.herokuapp.com/innov/edit/' + id;
     return this
             .http
             .get(uri)
@@ -44,12 +48,16 @@ export class CoinService {
             });
   }
 
-  updateCoin(name, price, id) {
-    const uri = 'https://peaceful-retreat-26329.herokuapp.com/coins/update/' + id;
+  updateInnov(name, author, imageURL, description, contact,id) {
+    const uri = 'https://peaceful-retreat-26329.herokuapp.com/innov/update/' + id;
 
     const obj = {
       name: name,
-      price: price,
+      author:author,
+      imageURL: imageURL,
+      description : description,
+      contact :contact,
+    
       
     };
     this
@@ -58,8 +66,8 @@ export class CoinService {
       .subscribe(res => console.log('Done'));
   }
 
-  deleteCoin(id) {
-    const uri = 'https://peaceful-retreat-26329.herokuapp.com/coins/delete/' + id;
+  deleteInnov(id) {
+    const uri = 'https://peaceful-retreat-26329.herokuapp.com/innov/delete/' + id;
 
         return this
             .http

@@ -10,13 +10,28 @@
       </div>
      
       <div >
-        <label class="col-md-4">Prix</label>
-        <input type="text"  formControlName="price" #price/>
+        <label class="col-md-4">Auteur</label>
+        <input type="text"  formControlName="author" #author/>
+      </div>
+
+      <div >
+        <label class="col-md-4">URL de l'image</label>
+        <input type="text"  formControlName="imageURL" #imageURL/>
+      </div>
+
+      <div >
+        <label class="col-md-4">Description</label>
+        <input type="text"  formControlName="description" #description/>
+      </div>
+
+      <div >
+        <label class="col-md-4">Contact</label>
+        <input type="text"  formControlName="contact" #contact/>
       </div>
       
       
         <div>
-          <button class="waves-effect waves-light btn" (click)="addCoin(name.value, price.value)" [disabled]="angForm.pristine || angForm.invalid">Add</button>
+          <button class="waves-effect waves-light btn" (click)="addCoin(name.value,author.value,imageURL.value,description.value,contact.value)" [disabled]="angForm.pristine || angForm.invalid">Add</button>
         </div>
     </form>
   </div>

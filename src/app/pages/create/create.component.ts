@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CoinService } from '../../services/coin/coin.service'
+import { InnovService } from '../../services/innovations/innov.service'
 import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 
 
@@ -16,23 +16,27 @@ export class CreateComponent implements OnInit {
 
   angForm: FormGroup;
 
-  constructor(private coinservice: CoinService, private fb: FormBuilder) {
+  constructor(private innovservice: InnovService, private fb: FormBuilder) {
     this.createForm();
    }
 
   createForm() {
     this.angForm = this.fb.group({
       name: ['', Validators.required ],
-      price: ['', Validators.required ],
+      author: ['', Validators.required ],
+      description: ['', Validators.required ],
+      imageURL: ['', Validators.required ],
+      contact: ['', Validators.required ],
     
    });
   }
   
-  addCoin(name, price) {
+  addInnov(name, author,imageURL,description,contact) {
 
-      this.coinservice.addCoin(name, price);
+      this.innovservice.addInnov(name, author,imageURL,description,contact)
       
   }
+ 
 
   
   ngOnInit() {

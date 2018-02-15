@@ -1,4 +1,4 @@
-import { CoinService } from '../../services/coin/coin.service'
+import { InnovService } from '../../services/innovations/innov.service'
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
@@ -10,23 +10,23 @@ import { Observable } from 'rxjs/Observable';
 })
 export class IndexComponent implements OnInit {
 
-  coins: any;
+  innovs: any;
 
-  constructor(private http: HttpClient, private service: CoinService) {}
+  constructor(private http: HttpClient, private service: InnovService) {}
 
   ngOnInit() {
     this.getCoins();
   }
 
   getCoins() {
-    this.service.getCoins().subscribe(res => {
-      this.coins = res;
+    this.service.getInnov().subscribe(res => {
+      this.innovs = res;
     });
   } 
   
   
   deleteCoin(id) {
-    this.service.deleteCoin(id).subscribe(res => {
+    this.service.deleteInnov(id).subscribe(res => {
       console.log('Deleted');
     });
 }
