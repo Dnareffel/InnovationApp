@@ -25,7 +25,7 @@ export class IndexComponent implements OnInit {
   } 
   
   
-  deleteCoin(id) {
+  deleteInnov(id) {
     this.service.deleteInnov(id).subscribe(res => {
       console.log('Deleted');
     });
