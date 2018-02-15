@@ -15,10 +15,10 @@ export class IndexComponent implements OnInit {
   constructor(private http: HttpClient, private service: InnovService) {}
 
   ngOnInit() {
-    this.getCoins();
+    this.getInnov();
   }
 
-  getCoins() {
+  getInnov() {
     this.service.getInnov().subscribe(res => {
       this.innovs = res;
     });
