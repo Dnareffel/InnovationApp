@@ -32,14 +32,14 @@ innovRoutes.route('/').get(function (req, res) {
 // Defined edit route
 innovRoutes.route('/edit/:id').get(function (req, res) {
   var id = req.params.id;
-  Fiche.findById(id, function (err, innov){
+  Innov.findById(id, function (err, innov){
       res.json(innov);
   });
 });
 
 //  Defined update route
 innovRoutes.route('/update/:id').post(function (req, res) {
-   Fiche.findById(req.params.id, function(err, innov) {
+   Innov.findById(req.params.id, function(err, innov) {
     if (!innov)
       return next(new Error('Could not load Document'));
     else {
