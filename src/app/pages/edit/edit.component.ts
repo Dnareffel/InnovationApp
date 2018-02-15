@@ -12,7 +12,7 @@ import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 })
 export class EditComponent implements OnInit {
 
-  coin: any;
+  innov: any;
   angForm: FormGroup;
   title = 'Editer';
   constructor(private route: ActivatedRoute, private router: Router, private service: InnovService, private fb: FormBuilder) {
@@ -29,22 +29,22 @@ export class EditComponent implements OnInit {
    });
   }
 
-  updateCoin(name,author,description,imageURL,contact) {
+  updateInnov(name,author,description,imageURL,contact) {
     this.route.params.subscribe(params => {
     this.service.updateInnov(name, author,description,imageURL,contact, params['id']);
     
   });
 }
 
-deleteCoin(id) {
+deleteInnov(id) {
   this.service.deleteInnov(id).subscribe(res => {
     console.log('Deleted');
   });
 }
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.coin = this.service.editInnov(params['id']).subscribe(res => {
-        this.coin = res;
+      this.innov = this.service.editInnov(params['id']).subscribe(res => {
+        this.innov= res;
       });
     });
   }
